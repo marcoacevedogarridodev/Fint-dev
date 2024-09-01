@@ -5,15 +5,15 @@ Backend
 - Python
 - Django
 - DjRestAuth
-- celery
+- Celery
 ```
 FrontEnd
 ```
-- React
+- Reactjs
 - Redux
-- nextjs
-- axios
-- highcharts
+- Nextjs
+- Axios
+- Highcharts
 ```
 DDBB
 ```
