@@ -6,6 +6,7 @@ Backend
 - Django
 - DjRestAuth
 - Celery
+- Redis
 ```
 FrontEnd
 ```
