@@ -8,9 +8,9 @@ app = Celery('backend')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 app.conf.beat_schedule = {
-    'fetch-mindicador-data-every-10-seconds': {
+    'fetch-mindicador-data-every-midnight': {
         'task': 'server.tasks.fetch_mindicador_data',
-        'schedule': 10.0, 
+        'schedule': crontab(minute=1, hour=0),  # A las 00:01 AM todos los días
     },
 }
 app.conf.timezone = 'UTC'
