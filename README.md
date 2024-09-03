@@ -6,6 +6,8 @@ Backend
 - Django
 - DjRestAuth
 - Celery
+        - celery -A backend worker --loglevel=info
+        - celery -A backend beat --loglevel=info
 - Redis
 ```
 FrontEnd
