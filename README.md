@@ -13,8 +13,9 @@ Backend
 FrontEnd
 ```
 - Reactjs
+- React Router
 - Redux
-- Nextjs
+- Material UI
 - Axios
 - Highcharts
 ```
