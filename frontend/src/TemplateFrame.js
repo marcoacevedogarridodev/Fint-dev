@@ -63,7 +63,7 @@ function TemplateFrame({
               href="/material-ui/getting-started/templates/"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
-              Fint-Dev
+              Fint-Dev Logo Empresa
             </Button>
             <IconButton
               size="small"

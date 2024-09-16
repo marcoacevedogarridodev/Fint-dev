@@ -4,7 +4,6 @@ import dayjs from 'dayjs';
 import Button from '@mui/material/Button';
 import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
@@ -30,7 +29,7 @@ function ButtonField(props) {
       startIcon={<CalendarTodayRoundedIcon fontSize="small" />}
       sx={{ minWidth: 'fit-content' }}
     >
-      {label ? `${label}` : 'Pick a date'}
+      {label || 'Pick a date'}
     </Button>
   );
 }
@@ -54,14 +53,16 @@ ButtonField.propTypes = {
 };
 
 export default function CustomDatePicker() {
-  const [value, setValue] = React.useState(dayjs('2023-04-17'));
+  // Initialize value with the current date
+  const [value, setValue] = React.useState(dayjs());
+
   const [open, setOpen] = React.useState(false);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
         value={value}
-        label={value == null ? null : value.format('MMM DD, YYYY')}
+        label={value.format('MMM DD, YYYY')}
         onChange={(newValue) => setValue(newValue)}
         slots={{ field: ButtonField }}
         slotProps={{

@@ -14,16 +14,16 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 
 const mainListItems = [
-  { text: 'Home', icon: <HomeRoundedIcon /> },
-  { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
-  { text: 'Clients', icon: <PeopleRoundedIcon /> },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+  { text: 'Dashboard', icon: <AnalyticsRoundedIcon /> },
+  { text: 'Monitor de Indicadores', icon: <AnalyticsRoundedIcon /> },
+  { text: 'Notificaciones', icon: <AssignmentRoundedIcon /> },
+  { text: 'Perfil', icon: <PeopleRoundedIcon /> },
 ];
 
 const secondaryListItems = [
   { text: 'Settings', icon: <SettingsRoundedIcon /> },
   { text: 'About', icon: <InfoRoundedIcon /> },
-  { text: 'Feedback', icon: <HelpRoundedIcon /> },
+  { text: 'Asistencia Fint-dev', icon: <HelpRoundedIcon /> },
 ];
 
 export default function MenuContent() {

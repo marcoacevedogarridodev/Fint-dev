@@ -10,14 +10,13 @@ import {
   MDBInput
 } from 'mdb-react-ui-kit';
 import './Login.css';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,17 +28,22 @@ function Login() {
       });
 
       console.log('Login successful:', response.data);
-      // Manejar éxito aquí, como redirigir o guardar el token
-      navigate('/dashboard'); // Redirige al dashboard en caso de éxito
+      // Handle success here, e.g., redirect or save token
+      navigate('/dashboard'); // Redirect to dashboard on success
     } catch (err) {
       console.error('Login error:', err);
       if (err.response) {
         const errors = err.response.data.non_field_errors || ['Unknown error occurred'];
         setError(errors.join(' '));
       } else {
-        setError('Error al conectar con el servidor.');
+        setError('Error connecting to the server.');
       }
     }
+  };
+
+  const handleForgotPassword = () => {
+    // Handle the forgot password action, e.g., navigate to a password reset page
+    navigate('/forgot-password');
   };
 
   return (
@@ -91,7 +95,13 @@ function Login() {
                         {error && <p className="text-danger">{error}</p>}
                         <MDBBtn className='w-100 mb-4' size='md' type='submit'>Login</MDBBtn>
                         <div className="text-center">
-                          <p>¿Olvidó su contraseña?</p>
+                          <MDBBtn
+                            color='link'
+                            className='p-0'
+                            onClick={handleForgotPassword}
+                          >
+                            ¿Olvidó su contraseña?
+                          </MDBBtn>
                         </div>
                       </form>
                     </MDBCardBody>
